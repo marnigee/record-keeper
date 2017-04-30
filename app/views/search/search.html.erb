@@ -1,0 +1,19 @@
+<h1>Albums Search</h1>
+
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
+<ul>
+  <% @albums.each do |album| %>
+    <li>
+      <h3>
+        <%= link_to album.title, controller: "albums", action: "show", id: album._id%>
+      </h3>
+    </li>
+  <% end %>
+</ul>
