@@ -40,6 +40,9 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     bindex (0.5.0)
+    bonsai-elasticsearch-rails (0.2.0)
+      elasticsearch-model (~> 0)
+      elasticsearch-rails (~> 0)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -55,11 +58,11 @@ GEM
       elasticsearch-transport (= 5.0.4)
     elasticsearch-api (5.0.4)
       multi_json
-    elasticsearch-model (5.0.0)
+    elasticsearch-model (0.1.9)
       activesupport (> 3)
-      elasticsearch (> 1)
+      elasticsearch (> 0.4)
       hashie
-    elasticsearch-rails (5.0.0)
+    elasticsearch-rails (0.1.9)
     elasticsearch-transport (5.0.4)
       faraday
       multi_json
@@ -172,10 +175,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails
   byebug
   coffee-rails (~> 4.2)
-  elasticsearch-model
-  elasticsearch-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
