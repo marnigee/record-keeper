@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RecordKeeper</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RecordKeeper</title>
+  <%= stylesheet_link_tag 'application' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">RecordKeeper</a>
 
-  <body>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Albums
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="<%= albums_path %>">All Your Albums <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= new_album_path %>">New Album</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= albums_path %>">My Account</a>
+        </li>
+      </ul>
+      <%= form_for search_path,
+        method: :get,
+        html: {class: "form-inline my-2 my-lg-0"},
+        url: search_path  do |f| 
+      %>
+        <%= text_field_tag :q, params[:q], placeholder: "Search", class: "form-control mr-sm-2" %>
+        <%= submit_tag "Search", name: nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
+    </div>
+  </nav>
+  <section class="container">
     <%= yield %>
-  </body>
+  </section>
+  <%= javascript_include_tag 'application' %>
+</body>
 </html>

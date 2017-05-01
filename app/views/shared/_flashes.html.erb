@@ -1,0 +1,5 @@
+<!-- flashes -->
+<%# most likely will be ids of notice and error %>
+<% flash.select {|key, value| !(key.to_s =~ /^_/)}.each do |key, msg| %>
+  <%= content_tag :div, msg, class: "container alert alert-#{key}" %>
+<% end %>

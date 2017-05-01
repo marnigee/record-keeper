@@ -1,36 +1,21 @@
 <%= form_for @album do |f| %>
- 
-  <% if @album.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@album.errors.count, "error") %> prohibited
-        this album from being saved:
-      </h2>
-      <ul>
-        <% @album.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :year %><br>
-    <%= f.text_field :year %>
-  </p>
-
-  <p>
-    <%= f.label :artist %><br>
-    <%= f.text_field :artist %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
- 
+  <div class="form-group">
+    <label for="formGroupTitleInput">Title</label>
+    <input type="text" class="form-control" id="formGroupTitleInput">
+  </div>
+  <div class="form-group">
+    <label for="formGroupYearInput">Year</label>
+    <input type="text" class="form-control" id="formGroupYearInput">
+    <small id="formGroupYearInputHelp" class="form-text text-muted">Please use yyyy format</small>
+  </div>
+  <div class="form-group">
+    <label for="formGroupArtistInput">Artist</label>
+    <input type="text" class="form-control" id="formGroupArtistInput">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-outline-success my-2 my-sm-0" id="formGroupSubmitButton" value="Save">
+  </div>
 <% end %>
+
+
+
