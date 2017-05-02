@@ -12,7 +12,6 @@ class Album < ApplicationRecord
     }
 
   belongs_to :condition
-  # validates :condition, presence: true
 end
 
 Album.import # for auto sync model with elastic search
