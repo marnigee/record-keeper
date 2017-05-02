@@ -1,4 +1,14 @@
 <%= form_for album do |f| %>
+  <% if album.errors.any? %>
+    <div class="alert alert-danger">
+      There was a problem saving the album.
+      <ol>
+        <% @album.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ol>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control" %>
@@ -13,7 +23,7 @@
     <%= f.text_field :artist, class: "form-control"  %>
   </div>
   <div class="form-group">
-    <%= f.label "Condition" %>
+    <%= f.label "Condition" %><br>
     <%= f.select :condition do %>
       <%= Condition.all.each do |condition| %>
         <%= content_tag(:option, condition.name) %>
