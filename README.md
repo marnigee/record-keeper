@@ -1,6 +1,6 @@
-Logikcull Take Home Coding Assignment
+# Logikcull Take Home Coding Assignment
 
-Introduction
+## Introduction
 
 I had a great time working on this app!
 
@@ -14,64 +14,72 @@ So I didn't get to everything.
 
 Oh well...there's always a next sprint. :-)
 
-Dependencies
+## Dependencies
 
 You will need:
 
-- Ruby (2.4 or greater)
-- Rails (5.0.2 or greater)
-- ElasticSearch
+* Ruby (2.4 or greater)
+* Rails (5.0.2 or greater)
+* ElasticSearch
 
-Install ElasticSearch
+## Install ElasticSearch
 
 (source of these installation instructions: https://www.sitepoint.com/full-text-search-rails-elasticsearch/)
 
-Install for Ubuntu and Mac
+### Install for Ubuntu and Mac
 
-Ubuntu
+#### Ubuntu
 
-Go to elasticsearch.org/download and download the DEB file. Once the file is local, type:
+Go to [elasticsearch.org/download](http://www.elasticsearch.org/download/) and download the **DEB** file. Once the file is local, type:
 
-    $ sudo dpkg -i elasticsearch-[version].deb
+```
+$ sudo dpkg -i elasticsearch-[version].deb
+```
 
-Mac
+#### Mac
 
 If you’re on a Mac, Homebrew makes it easy:
 
-    $ brew install elasticsearch
+```
+$ brew install elasticsearch
+```
 
-Validate Installation
+#### Validate Installation
 
-Open this url: http://localhost:9200 and you’ll see ElasticSearch respond like so:
+Open this url: [http://localhost:9200](http://localhost:9200/) and you’ll see ElasticSearch respond like so:
 
-    {
-      "status" : 200,
-      "name" : "Anvil",
-      "version" : {
-        "number" : "1.2.1",
-        "build_hash" : "6c95b759f9e7ef0f8e17f77d850da43ce8a4b364",
-        "build_timestamp" : "2014-06-03T15:02:52Z",
-        "build_snapshot" : false,
-        "lucene_version" : "4.8"
-      },
-      "tagline" : "You Know, for Search"
-    }
+```
+{
+  "status" : 200,
+  "name" : "Anvil",
+  "version" : {
+    "number" : "1.2.1",
+    "build_hash" : "6c95b759f9e7ef0f8e17f77d850da43ce8a4b364",
+    "build_timestamp" : "2014-06-03T15:02:52Z",
+    "build_snapshot" : false,
+    "lucene_version" : "4.8"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
 
-Setup
+## Setup
 
 Install the dependencies:
 
-    $ gem install bundler # if you don't have it
-    $ bundle install
-    $ brew services start elasticsearch
-    $ rails s
+```bash
+$ gem install bundler # if you don't have it
+$ bundle install
+$ brew services start elasticsearch
+$ rails s
+```
 
 To run the app, visit http://localhost:3000/albums.
 
-Tests
+## Tests
 
 To test the app, run the following command:
 
-    $ rake test
-
-
+```bash
+$ rake test
+```
