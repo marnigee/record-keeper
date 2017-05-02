@@ -5,6 +5,7 @@ class AlbumTest < ActiveSupport::TestCase
     album = Album.new
     album.artist = 'Album Artist'
     album.year = 2016
+    album.condition = Condition.first
     assert_not album.save
   end
 
@@ -12,6 +13,7 @@ class AlbumTest < ActiveSupport::TestCase
     album = Album.new
     album.title = 'Album Title'
     album.year = 2016
+    album.condition = Condition.first
     assert_not album.save
   end
 
@@ -19,6 +21,7 @@ class AlbumTest < ActiveSupport::TestCase
     album = Album.new
     album.title = 'Album Title'
     album.artist = 'Album Artist'
+    album.condition = Condition.first
     assert_not album.save
   end
 
@@ -27,6 +30,15 @@ class AlbumTest < ActiveSupport::TestCase
     album.title = 'Album Title'
     album.artist = 'Album Artist'
     album.year = 2016
+    assert_not album.save
+  end
+
+  test "should not save album with an improperly formatted year" do
+    album = Album.new
+    album.title = 'Album Title'
+    album.artist = 'Album Artist'
+    album.condition = Condition.first
+    album.year = 'badly formatted year'
     assert_not album.save
   end
 end
