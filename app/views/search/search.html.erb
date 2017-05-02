@@ -1,11 +1,29 @@
 <h1>Albums Search</h1>
-
-<ul>
+<div class="table-responsive">
+  <table class="table table-bordered">
+  <tr>
+    <td>
+      <strong>Title</strong>
+    </td>
+    <td>
+      <strong>Year</strong>
+    </td>
+    <td>
+    <strong>Artist</strong>
+    </td>
+  </tr>
   <% @albums.each do |album| %>
-    <li>
-      <h3>
-        <%= link_to album.title, controller: "albums", action: "show", id: album._id%>
-      </h3>
-    </li>
+    <tr>
+      <td>
+        <%= link_to album.title, album_path(album) %>
+      </td>
+      <td>
+        <%= album.year %>
+      </td>
+      <td>
+      <%= album.artist %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+  </table>
+</div>
