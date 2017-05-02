@@ -5,7 +5,8 @@ class Album < ApplicationRecord
   include Elasticsearch::Model::Callbacks
   validates :title, presence: true
   validates :artist, presence: true
-  validates :year, presence: true, 
+  validates :year,
+    presence: true,
     numericality: {
       only_integer: true,
       less_than: 10_000
