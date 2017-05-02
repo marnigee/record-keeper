@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501041005) do
+ActiveRecord::Schema.define(version: 20170501222415) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "title"
     t.integer  "year"
     t.string   "artist"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "condition_id"
+  end
+
+  create_table "albums_conditions", id: false, force: :cascade do |t|
+    t.integer "album_id",     null: false
+    t.integer "condition_id", null: false
   end
 
   create_table "conditions", force: :cascade do |t|

@@ -6,7 +6,8 @@ class Album < ApplicationRecord
   validates :title, presence: true
   validates :artist, presence: true
   validates :year, presence: true
-  has_one :condition
+  belongs_to :condition
   # validates :condition, presence: true
 end
+
 Album.import # for auto sync model with elastic search

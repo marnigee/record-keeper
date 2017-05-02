@@ -26,7 +26,9 @@ class AlbumsController < ApplicationController
   end
 
   def create
+    # condition = Condition.find_by(description: param['condition'])
     @album = Album.new album_params
+    @album.condition = Condition.find_by(name: 'Mint')
     if @album.save
       redirect_to @album
     else
@@ -44,6 +46,6 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit :title, :year, :artist, :condition
+    params.require(:album).permit(:title, :year, :artist)
   end
 end
