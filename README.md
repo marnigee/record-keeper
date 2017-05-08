@@ -1,18 +1,8 @@
-# Logikcull Take Home Coding Assignment
+# Record Keeper App
 
 ## Introduction
 
-I had a great time working on this app!
-
-Since part of this exercise was for you to get a better sense of how I work, I'll go ahead and share the Trello board I used to organize this project: https://trello.com/b/2PoQuXXY/logikcull-code-take-home-coding-assignment.
-
-I decided to jump ahead into recent versions of Rails 5.0.2 and Ruby 2.4 (I currently work with a codebase in the older Rails 4.1 and Ruby 2.1). That slowed me down a bit, but it was nice to take a closer look at all the shiny new toys I'd been hearing about.
-
-I have to admit that I bit off more than I could chew in my planning so I had to scale it back a bit. I also underestimated the front-end work — getting bootstrap set up and things looking halfway decent on the front end took quite a bit longer than I thought.
-
-So I didn't get to everything.
-
-Oh well...there's always a next sprint. :-)
+This is Phase I of an app for record collectors.
 
 ## Dependencies
 
